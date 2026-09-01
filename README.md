@@ -70,7 +70,6 @@ Created by Tino & ChatGPT
 ## v0.3.0
 
 - 插件正式命名为 Easy WebP。
-- 面板与说明文档加入署名：Created by Tino & ChatGPT。
 
 ## 安全设计
 
