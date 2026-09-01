@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Easy WebP</title>
+  <link rel="stylesheet" href="css/panel.css" />
+</head>
+<body>
+  <main class="panel">
+    <header>
+      <h1>Easy WebP</h1>
+      <button id="refreshButton" class="icon-button" title="刷新当前合成">↻</button>
+    </header>
+
+    <section class="card comp-card">
+      <div id="compName" class="comp-name">正在读取…</div>
+      <div id="compMeta" class="meta">—</div>
+    </section>
+
+    <section class="card settings">
+      <div class="setting-row quality-row">
+        <label for="quality">画质 <small>100 = 无损</small></label>
+        <input id="quality" type="range" min="0" max="100" step="1" value="90" />
+        <input id="qualityValue" class="number short" type="number" min="0" max="100" value="90" />
+      </div>
+
+      <div class="setting-row">
+        <label for="loopCount">循环次数</label>
+        <input id="loopCount" class="number" type="number" min="0" step="1" value="0" />
+        <span class="hint">0 = 无限</span>
+      </div>
+
+      <label class="check-row">
+        <input id="useWorkArea" type="checkbox" checked />
+        <span title="勾选：只导出时间轴工作区间；不勾选：导出完整合成时长">仅导出时间轴工作区间</span>
+      </label>
+
+      <label class="check-row">
+        <input id="revealOutput" type="checkbox" checked />
+        <span>完成后在 Finder 中显示</span>
+      </label>
+    </section>
+
+    <button id="exportButton" class="primary" type="button">导出 WebP</button>
+
+    <section id="statusBox" class="status idle" aria-live="polite">
+      <div id="statusTitle">准备就绪</div>
+      <div id="statusDetail">选择当前合成后即可导出</div>
+    </section>
+
+    <details id="logDetails">
+      <summary>详细日志</summary>
+      <pre id="logOutput"></pre>
+    </details>
+
+    <footer>Created by Tino &amp; ChatGPT <span>· v0.3.0</span></footer>
+  </main>
+  <script src="js/panel.js"></script>
+</body>
+</html>
