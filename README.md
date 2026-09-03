@@ -22,11 +22,13 @@ Easy WebP 可以直接从 After Effects 导出 animated WebP。插件会先通�
 - macOS Intel（x86-64）
 - Windows 64 位（x64）
 
+其中 Windows x64 版本尚未经过实机测试，目前属于待验证支持。
+
 ### 项目缘起
 
 这个项目最初只是为了解决一个很具体的问题：原有的 WebP 导出插件无法在新版 After Effects 中正常使用，而在不同 AE 版本之间来回切换也并不方便。
 
-于是我们从零做了 Easy WebP。目标始终很简单：界面尽量少，设置足够直观，并且让 Apple Silicon、Intel Mac 和 Windows 用户都能直接使用。它不是一个复杂的媒体转换工具，只专注于把 AE 合成可靠地导出为 animated WebP。
+于是我们从零做了 Easy WebP。目标始终很简单：界面尽量少，设置足够直观，并尽可能覆盖 Apple Silicon、Intel Mac 和 Windows。它不是一个复杂的媒体转换工具，只专注于把 AE 合成可靠地导出为 animated WebP。
 
 Easy WebP 由 Tino.Tian 设计并发起，在与 ChatGPT 的持续协作中完成开发、排错和跨平台适配。
 
@@ -36,7 +38,7 @@ Easy WebP 由 Tino.Tian 设计并发起，在与 ChatGPT 的持续协作中完�
 | --- | --- |
 | After Effects | 2021–2026（主机版本 18.0 及以上） |
 | macOS | Apple Silicon、Intel |
-| Windows | 64 位 x64 |
+| Windows | 已内置 64 位 x64 编码器，尚未实机测试 |
 | Windows ARM | 暂不支持 |
 | Alpha 透明通道 | 支持 |
 | 音频 | animated WebP 不支持音频 |
@@ -82,6 +84,7 @@ Easy WebP 由 Tino.Tian 设计并发起，在与 ChatGPT 的持续协作中完�
 - AE 渲染阶段为同步操作，期间扩展面板可能暂时无响应。
 - 插件使用 AE 内置的隐藏 PNG Alpha 输出模板；如果个别 AE 语言版本的模板结构不同，日志会显示相应错误。
 - animated WebP 不包含声音。
+- Windows x64 版本尚未实机测试，安装或导出过程中仍可能出现兼容性问题。
 - Windows ARM 暂未支持。
 
 ### 安全设计
@@ -147,11 +150,13 @@ Three encoder builds are included, so no additional command-line tools are requi
 - macOS Intel (x86-64)
 - Windows 64-bit (x64)
 
+The Windows x64 build has not yet been tested on a physical Windows system and should currently be considered unverified.
+
 ### Why this exists
 
 This project began with a very specific problem: an existing WebP export plugin no longer worked reliably in newer versions of After Effects, and switching between AE versions just to export a file was not a practical solution.
 
-So we built Easy WebP from scratch. The goal has always been simple: keep the interface minimal, make the settings easy to understand, and support Apple Silicon, Intel Mac, and Windows from one package. It is not intended to be a complex media conversion suite—it focuses on exporting AE compositions to animated WebP reliably.
+So we built Easy WebP from scratch. The goal has always been simple: keep the interface minimal, make the settings easy to understand, and cover Apple Silicon, Intel Mac, and Windows wherever possible. It is not intended to be a complex media conversion suite—it focuses on exporting AE compositions to animated WebP reliably.
 
 Easy WebP was initiated and designed by Tino.Tian, then developed, debugged, and adapted across platforms through continuous collaboration with ChatGPT.
 
@@ -161,7 +166,7 @@ Easy WebP was initiated and designed by Tino.Tian, then developed, debugged, and
 | --- | --- |
 | After Effects | 2021–2026 (host version 18.0 or later) |
 | macOS | Apple Silicon and Intel |
-| Windows | 64-bit x64 |
+| Windows | 64-bit x64 encoder included; not yet tested on Windows hardware |
 | Windows ARM | Not currently supported |
 | Alpha transparency | Supported |
 | Audio | Not supported by animated WebP |
@@ -207,6 +212,7 @@ After a successful export, the temporary PNG sequence is deleted automatically. 
 - AE rendering is synchronous, so the extension panel may appear unresponsive during this stage.
 - The extension uses AE's built-in hidden PNG Alpha output templates. If a localized AE release uses a different template structure, the log will report the resulting error.
 - Animated WebP does not contain audio.
+- The Windows x64 build has not yet been tested and may still have installation or export compatibility issues.
 - Windows ARM is not currently supported.
 
 ### Safety design
