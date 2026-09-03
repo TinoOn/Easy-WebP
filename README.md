@@ -2,7 +2,7 @@
 
 适用于 After Effects 2021–2026 的 animated WebP 导出面板。当前安装包内置 macOS arm64、macOS x86-64 与 Windows x64 编码器。
 
-Created by Tino
+Created by Tino.Tian
 
 ## macOS 安装
 
